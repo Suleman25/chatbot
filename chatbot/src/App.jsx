@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import ChatArea from './components/ChatArea';
 import InputArea from './components/InputArea';
+import Footer from './components/Footer';
 import useChat from './hooks/useChat';
 import useUI from './hooks/useUI';
 import { HiSparkles } from 'react-icons/hi2';
@@ -229,6 +230,9 @@ const App = () => {
           error={error}
           onClearError={clearError}
         />
+
+        {/* Footer */}
+        <Footer developerName="Your Name" />
       </div>
 
       {/* Overlay for mobile sidebar */}
