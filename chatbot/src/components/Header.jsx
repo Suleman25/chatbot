@@ -33,8 +33,8 @@ const Header = ({
 
         {/* Right side with buttons */}
         <div className="flex items-center gap-1 sm:gap-2 relative flex-shrink-0">
-          {/* Contextual Prompts Button - Hidden on very small screens */}
-          <div className="relative hidden xs:block">
+          {/* Contextual Prompts Button - Now visible on mobile */}
+          <div className="relative">
             <button
               onClick={onToggleContextualPrompts}
               className={`p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-all duration-300 relative group touch-manipulation ${
@@ -152,16 +152,16 @@ const Header = ({
             <HiPlus className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
 
-          {/* Dark Mode Toggle - Hidden on very small screens */}
+          {/* Dark Mode Toggle - Now visible on mobile */}
           <button
             onClick={onToggleDarkMode}
-            className="hidden sm:block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-all duration-300 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white touch-manipulation"
+            className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-all duration-300 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white touch-manipulation"
             title={darkMode ? "Switch to light mode" : "Switch to dark mode"}
           >
             {darkMode ? (
-              <HiSun className="w-5 h-5" />
+              <HiSun className="w-4 h-4 sm:w-5 sm:h-5" />
             ) : (
-              <HiMoon className="w-5 h-5" />
+              <HiMoon className="w-4 h-4 sm:w-5 sm:h-5" />
             )}
           </button>
         </div>

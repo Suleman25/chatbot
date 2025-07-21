@@ -246,7 +246,7 @@ const App = () => {
       {/* Overlay for contextual prompts */}
       {showContextualPrompts && (
         <div
-          className="fixed inset-0 z-40"
+          className="fixed inset-0 z-30"
           onClick={closeContextualPrompts}
         />
       )}

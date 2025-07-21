@@ -7,7 +7,7 @@ const Sidebar = ({ isOpen, chatHistory, currentChatId, onSelectChat, onDeleteCha
       fixed inset-y-0 left-0 z-50 w-72 sm:w-80 bg-white dark:bg-gray-900 transform transition-all duration-300 ease-in-out border-r border-gray-200 dark:border-gray-800 shadow-2xl
       ${isOpen ? 'translate-x-0' : '-translate-x-full'}
     `}>
-      <div className="flex flex-col h-full">
+      <div className="flex flex-col h-full relative z-50">
         {/* Sidebar Header - Mobile optimized */}
         <div className="p-3 sm:p-4 border-b border-gray-200 dark:border-gray-800">
           <h2 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 dark:from-white dark:via-gray-100 dark:to-white bg-clip-text text-transparent mb-2 tracking-tight">
