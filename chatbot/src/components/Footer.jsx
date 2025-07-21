@@ -1,7 +1,7 @@
 import React from 'react';
 import { HiSparkles, HiHeart, HiCode } from 'react-icons/hi2';
 
-const Footer = ({ developerName = "Your Name" }) => {
+const Footer = ({ developerName = "Suleman" }) => {
   const currentYear = new Date().getFullYear();
 
   return (
