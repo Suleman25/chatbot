@@ -1,5 +1,5 @@
 import React from 'react';
-import { HiSparkles, HiHeart, HiCode } from 'react-icons/hi2';
+import { HiSparkles, HiHeart, HiCodeBracket } from 'react-icons/hi2';
 
 const Footer = ({ developerName = "Suleman" }) => {
   const currentYear = new Date().getFullYear();
@@ -11,7 +11,7 @@ const Footer = ({ developerName = "Suleman" }) => {
           {/* Developer Info */}
           <div className="flex items-center gap-2 text-center sm:text-left">
             <div className="flex items-center gap-1.5">
-              <HiCode className="w-4 h-4 text-blue-400" />
+              <HiCodeBracket className="w-4 h-4 text-blue-400" />
               <span className="text-sm font-medium text-gray-300">
                 Developed by{' '}
                 <span className="text-blue-400 font-semibold">{developerName}</span>

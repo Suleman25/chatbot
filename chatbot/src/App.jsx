@@ -232,7 +232,7 @@ const App = () => {
         />
 
         {/* Footer */}
-        <Footer developerName="Your Name" />
+        <Footer developerName="Suleman" />
       </div>
 
       {/* Overlay for mobile sidebar */}
