@@ -12,7 +12,7 @@ const ChatArea = ({ messages, isLoading, onCopyMessage, onLikeMessage, error, co
 
   if (messages.length === 0) {
     return (
-      <div className="flex-1 flex items-center justify-center bg-gray-900 relative overflow-hidden px-4 sm:px-6">
+      <div className="flex-1 flex items-center justify-center bg-gray-50 dark:bg-gray-900 relative overflow-hidden px-4 sm:px-6">
         <div className="relative text-center max-w-lg mx-auto p-4 sm:p-8">
           {/* 3D Animated Bot Logo - Mobile optimized */}
           <div className="relative mb-6 sm:mb-8">
@@ -33,11 +33,11 @@ const ChatArea = ({ messages, isLoading, onCopyMessage, onLikeMessage, error, co
             </div>
           </div>
           
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent mb-3 sm:mb-4 tracking-tight">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 dark:from-white dark:via-blue-100 dark:to-white bg-clip-text text-transparent mb-3 sm:mb-4 tracking-tight">
             Hi, I'm Smart Buddy.
           </h3>
           
-          <p className="text-gray-300 mb-6 sm:mb-8 text-base sm:text-lg md:text-xl font-light tracking-wide">
+          <p className="text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 text-base sm:text-lg md:text-xl font-light tracking-wide">
             How can I help you today?
           </p>
 
@@ -47,7 +47,7 @@ const ChatArea = ({ messages, isLoading, onCopyMessage, onLikeMessage, error, co
   }
 
   return (
-    <div className="flex-1 overflow-y-auto bg-gray-900 px-3 sm:px-4 md:px-6 py-3 sm:py-4">
+    <div className="flex-1 overflow-y-auto bg-gray-50 dark:bg-gray-900 px-3 sm:px-4 md:px-6 py-3 sm:py-4">
       <div className="max-w-4xl mx-auto relative">
 
         {messages.map((message) => (
@@ -60,22 +60,22 @@ const ChatArea = ({ messages, isLoading, onCopyMessage, onLikeMessage, error, co
         ))}
         
         {isLoading && (
-          <div className="flex gap-3 sm:gap-4 p-3 sm:p-4 bg-gray-800/20 border-l-4 border-blue-600 mb-2 sm:mb-3">
+          <div className="flex gap-3 sm:gap-4 p-3 sm:p-4 bg-blue-50 dark:bg-gray-800/20 border-l-4 border-blue-600 mb-2 sm:mb-3 rounded-r-lg">
             <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-blue-600 rounded-lg sm:rounded-xl flex items-center justify-center animate-pulse">
               <RiRobot2Line className="w-4 h-4 sm:w-5 md:w-6 sm:h-5 md:h-6 text-white animate-bounce" />
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-                <span className="font-medium text-white text-sm sm:text-base md:text-lg">Smart Buddy</span>
-                <span className="text-xs px-2 py-1 bg-blue-600/20 text-blue-400 rounded-full font-medium animate-pulse">
+                <span className="font-medium text-gray-900 dark:text-white text-sm sm:text-base md:text-lg">Smart Buddy</span>
+                <span className="text-xs px-2 py-1 bg-blue-600/20 text-blue-600 dark:text-blue-400 rounded-full font-medium animate-pulse">
                   Typing...
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="flex space-x-1">
-                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gray-500 rounded-full animate-bounce"></div>
-                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gray-300 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce"></div>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gray-500 dark:bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gray-600 dark:bg-gray-300 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                 </div>
               </div>
             </div>

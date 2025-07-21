@@ -184,7 +184,7 @@ const App = () => {
   }
 
   return (
-    <div className="flex h-screen bg-gray-900">
+    <div className="flex h-screen bg-gray-100 dark:bg-gray-900">
       {/* Sidebar */}
       <Sidebar
         isOpen={sidebarOpen}
