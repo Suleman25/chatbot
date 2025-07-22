@@ -56,7 +56,6 @@ const InputArea = ({ onSendMessage, isLoading, disabled, error, onClearError }) 
     }
   }, [disabled]);
 
-  const isNearLimit = charCount > maxLength * 0.8;
   const isAtLimit = charCount >= maxLength;
 
   return (
@@ -147,28 +146,7 @@ const InputArea = ({ onSendMessage, isLoading, disabled, error, onClearError }) 
               )}
             </button>
           </div>
-          
-          {/* Controls Section - Responsive layout */}
-          <div className="flex flex-col xs:flex-row justify-between items-center mt-2 sm:mt-3 px-1 gap-2 xs:gap-0">
-            <div className="flex items-center justify-center xs:justify-start">
-              <p className="text-xs text-gray-500 dark:text-gray-500 font-medium">
-                Press <kbd className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-xs font-mono border border-gray-300 dark:border-gray-600">Enter</kbd> to send
-              </p>
-            </div>
-            
-            {/* Character Counter */}
-            <div className={`
-              text-xs font-medium px-3 py-1 rounded-full transition-colors duration-200
-              ${isAtLimit 
-                ? 'text-red-700 dark:text-red-400 bg-red-100 dark:bg-red-900/30' 
-                : isNearLimit 
-                  ? 'text-amber-700 dark:text-amber-400 bg-amber-100 dark:bg-amber-900/30' 
-                  : 'text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700/50'
-              }
-            `}>
-              {charCount}/{maxLength}
-            </div>
-          </div>
+
         </form>
         
         {/* Smart Buddy Branding - Mobile optimized */}
