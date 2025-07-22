@@ -27,8 +27,14 @@ const useUI = () => {
     }
   }, [darkMode]);
 
-  const toggleSidebar = () => setSidebarOpen(prev => !prev);
-  const closeSidebar = () => setSidebarOpen(false);
+  const toggleSidebar = () => {
+    console.log('Toggle sidebar called, current state:', sidebarOpen);
+    setSidebarOpen(prev => !prev);
+  };
+  const closeSidebar = () => {
+    console.log('Close sidebar called');
+    setSidebarOpen(false);
+  };
   const toggleDarkMode = () => setDarkMode(prev => !prev);
 
   // Close sidebar on escape key
@@ -41,18 +47,6 @@ const useUI = () => {
 
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [sidebarOpen]);
-
-  // Close sidebar when clicking outside on mobile
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (sidebarOpen && !event.target.closest('.sidebar') && window.innerWidth < 1024) {
-        closeSidebar();
-      }
-    };
-
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
   }, [sidebarOpen]);
 
   return {

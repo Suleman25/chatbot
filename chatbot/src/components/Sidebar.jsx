@@ -1,18 +1,29 @@
 import React from 'react';
-import { HiOutlineChatBubbleLeft, HiOutlineTrash, HiOutlinePencil, HiSparkles } from 'react-icons/hi2';
+import { HiOutlineChatBubbleLeft, HiOutlineTrash, HiOutlinePencil, HiSparkles, HiXMark } from 'react-icons/hi2';
 
 const Sidebar = ({ isOpen, chatHistory, currentChatId, onSelectChat, onDeleteChat, onEditChat, onClose }) => {
+
   return (
     <div className={`
-      fixed inset-y-0 left-0 z-50 w-64 sm:w-72 md:w-80 bg-white dark:bg-gray-900 transform transition-all duration-300 ease-in-out border-r border-gray-200 dark:border-gray-800 shadow-2xl
+      sidebar fixed inset-y-0 left-0 z-50 w-64 sm:w-72 md:w-80 bg-white dark:bg-gray-900 transform transition-all duration-300 ease-in-out border-r border-gray-200 dark:border-gray-800 shadow-2xl
       ${isOpen ? 'translate-x-0' : '-translate-x-full'}
     `}>
       <div className="flex flex-col h-full relative z-50">
         {/* Sidebar Header - Mobile optimized */}
         <div className="p-2 sm:p-3 md:p-4 border-b border-gray-200 dark:border-gray-800">
-          <h2 className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 dark:from-white dark:via-gray-100 dark:to-white bg-clip-text text-transparent mb-1 sm:mb-2 tracking-tight">
-            Chat History
-          </h2>
+          <div className="flex items-center justify-between mb-1 sm:mb-2">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 dark:from-white dark:via-gray-100 dark:to-white bg-clip-text text-transparent tracking-tight">
+              Chat History
+            </h2>
+            {/* Close button */}
+            <button
+              onClick={onClose}
+              className="p-1.5 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors touch-manipulation"
+              aria-label="Close sidebar"
+            >
+              <HiXMark className="w-5 h-5 text-gray-500 dark:text-gray-400" />
+            </button>
+          </div>
           <p className="text-gray-500 dark:text-gray-400 text-xs sm:text-sm">
             {chatHistory.length} conversation{chatHistory.length !== 1 ? 's' : ''}
           </p>

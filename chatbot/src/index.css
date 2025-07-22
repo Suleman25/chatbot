@@ -38,6 +38,10 @@
     line-height: 1.6;
     color: rgb(55 65 81); /* gray-700 */
     background: linear-gradient(135deg, rgb(249 250 251), rgb(243 244 246), rgb(229 231 235));
+    /* Mobile optimization */
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
 
   /* Dark mode body */
@@ -268,8 +272,32 @@
   color: rgb(243 244 246);
 }
 
-/* Focus ring improvements */
-.focus\:ring-premium:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-}
+  /* Focus ring improvements */
+  .focus\:ring-premium:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  }
+
+  /* Mobile-specific utilities */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Prevent iOS zoom on input focus */
+  @media screen and (max-width: 768px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="search"],
+    textarea {
+      font-size: 16px;
+    }
+  }
+  
+  /* Simple mobile optimizations */
+  .touch-manipulation {
+    -webkit-tap-highlight-color: transparent;
+  }

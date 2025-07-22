@@ -235,7 +235,7 @@ const App = () => {
         <Footer developerName="Suleman" />
       </div>
 
-      {/* Overlay for mobile sidebar */}
+      {/* Overlay for sidebar */}
       {sidebarOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-40 backdrop-blur-sm"
