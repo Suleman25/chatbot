@@ -1,0 +1,561 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html, body, #root {
+    height: 100%;
+  }
+
+  /* RabitaHub Branding Fonts */
+  .rabita-brand {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .hub-brand {
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    /* Ensure proper viewport handling on mobile */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+
+  /* Responsive typography */
+  h1 {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold;
+  }
+
+  h2 {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold;
+  }
+
+  h3 {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold;
+  }
+
+  h4 {
+    @apply text-base sm:text-lg md:text-xl lg:text-2xl font-medium;
+  }
+
+  p {
+    @apply text-sm sm:text-base;
+  }
+
+  /* Mobile-first responsive utilities */
+  .container-responsive {
+    @apply w-full px-4 sm:px-6 lg:px-8 mx-auto;
+    max-width: 100%;
+  }
+
+  .container-responsive-sm {
+    @apply w-full px-2 sm:px-4 lg:px-6 mx-auto;
+    max-width: 100%;
+  }
+
+  .container-responsive-lg {
+    @apply w-full px-6 sm:px-8 lg:px-12 xl:px-16 mx-auto;
+    max-width: 100%;
+  }
+
+  /* Responsive grid layouts */
+  .grid-responsive {
+    @apply grid gap-4 sm:gap-6 lg:gap-8;
+  }
+
+  .grid-responsive-2 {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8;
+  }
+
+  .grid-responsive-3 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8;
+  }
+
+  .grid-responsive-4 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8;
+  }
+
+  /* Responsive flex layouts */
+  .flex-responsive {
+    @apply flex flex-col sm:flex-row;
+  }
+
+  .flex-responsive-center {
+    @apply flex flex-col sm:flex-row items-center justify-center;
+  }
+
+  .flex-responsive-between {
+    @apply flex flex-col sm:flex-row items-center justify-between;
+  }
+
+  /* Responsive spacing */
+  .space-responsive {
+    @apply space-y-4 sm:space-y-6 lg:space-y-8;
+  }
+
+  .space-responsive-x {
+    @apply space-x-4 sm:space-x-6 lg:space-x-8;
+  }
+
+  /* Responsive padding and margins */
+  .p-responsive {
+    @apply p-4 sm:p-6 lg:p-8;
+  }
+
+  .px-responsive {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .py-responsive {
+    @apply py-4 sm:py-6 lg:py-8;
+  }
+
+  .m-responsive {
+    @apply m-4 sm:m-6 lg:m-8;
+  }
+
+  .mx-responsive {
+    @apply mx-4 sm:mx-6 lg:mx-8;
+  }
+
+  .my-responsive {
+    @apply my-4 sm:my-6 lg:my-8;
+  }
+
+  /* Responsive text sizes */
+  .text-responsive-sm {
+    @apply text-xs sm:text-sm md:text-base;
+  }
+
+  .text-responsive-base {
+    @apply text-sm sm:text-base md:text-lg;
+  }
+
+  .text-responsive-lg {
+    @apply text-base sm:text-lg md:text-xl;
+  }
+
+  .text-responsive-xl {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+
+  /* Responsive button sizes */
+  .btn-responsive-sm {
+    @apply px-2 py-1 text-xs sm:px-3 sm:py-2 sm:text-sm;
+  }
+
+  .btn-responsive-base {
+    @apply px-3 py-2 text-sm sm:px-4 sm:py-2 sm:text-base;
+  }
+
+  .btn-responsive-lg {
+    @apply px-4 py-2 text-base sm:px-6 sm:py-3 sm:text-lg;
+  }
+
+  /* Responsive card layouts */
+  .card-responsive {
+    @apply p-4 sm:p-6 lg:p-8;
+  }
+
+  .card-responsive-sm {
+    @apply p-3 sm:p-4 lg:p-6;
+  }
+
+  .card-responsive-lg {
+    @apply p-6 sm:p-8 lg:p-12;
+  }
+
+  /* Mobile navigation styles */
+  .mobile-nav {
+    @apply fixed inset-0 z-50 bg-background;
+  }
+
+  .mobile-nav-content {
+    @apply flex flex-col h-full w-full max-w-full;
+  }
+
+  .mobile-nav-header {
+    @apply flex items-center justify-between p-4 border-b;
+  }
+
+  .mobile-nav-menu {
+    @apply flex-1 overflow-y-auto p-4 space-y-4;
+  }
+
+  .mobile-nav-item {
+    @apply flex items-center space-x-3 px-4 py-3 rounded-lg text-base font-medium transition-colors;
+  }
+
+  /* Responsive sidebar */
+  .sidebar-responsive {
+    @apply fixed inset-y-0 left-0 z-40 w-64 bg-background border-r transform transition-transform duration-300 ease-in-out;
+  }
+
+  .sidebar-responsive-hidden {
+    @apply -translate-x-full;
+  }
+
+  .sidebar-responsive-visible {
+    @apply translate-x-0;
+  }
+
+  /* Responsive overlay */
+  .overlay-responsive {
+    @apply fixed inset-0 z-30 bg-black/50 backdrop-blur-sm;
+  }
+
+  /* Responsive modal */
+  .modal-responsive {
+    @apply fixed inset-0 z-50 flex items-center justify-center p-4;
+  }
+
+  .modal-responsive-content {
+    @apply w-full max-w-md sm:max-w-lg lg:max-w-xl xl:max-w-2xl bg-background rounded-lg shadow-lg;
+  }
+
+  /* Responsive table */
+  .table-responsive {
+    @apply w-full overflow-x-auto;
+  }
+
+  .table-responsive-content {
+    @apply min-w-full divide-y divide-border;
+  }
+
+  /* Responsive form */
+  .form-responsive {
+    @apply space-y-4 sm:space-y-6;
+  }
+
+  .form-responsive-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6;
+  }
+
+  /* Responsive chat layout */
+  .chat-responsive {
+    @apply flex flex-col h-full;
+  }
+
+  .chat-responsive-header {
+    @apply flex items-center justify-between p-4 border-b bg-background;
+  }
+
+  .chat-responsive-messages {
+    @apply flex-1 overflow-y-auto p-4 space-y-4;
+  }
+
+  .chat-responsive-input {
+    @apply p-4 border-t bg-background;
+  }
+
+  /* Responsive message bubbles */
+  .message-bubble-responsive {
+    @apply max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl;
+  }
+
+  /* Responsive avatar sizes */
+  .avatar-responsive-sm {
+    @apply w-8 h-8 sm:w-10 sm:h-10;
+  }
+
+  .avatar-responsive-base {
+    @apply w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14;
+  }
+
+  .avatar-responsive-lg {
+    @apply w-16 h-16 sm:w-20 sm:h-20;
+  }
+
+  .avatar-responsive-xl {
+    @apply w-24 h-24 sm:w-28 sm:h-28;
+  }
+
+  /* Responsive badge */
+  .badge-responsive {
+    @apply text-xs px-2 py-1 sm:text-sm sm:px-3 sm:py-1;
+  }
+
+  /* Responsive input */
+  .input-responsive {
+    @apply text-sm sm:text-base px-3 py-2 sm:px-4 sm:py-2;
+  }
+
+  /* Responsive dropdown */
+  .dropdown-responsive {
+    @apply w-48 sm:w-56 lg:w-64;
+  }
+
+  /* Responsive tooltip */
+  .tooltip-responsive {
+    @apply text-xs sm:text-sm;
+  }
+
+  /* Responsive toast */
+  .toast-responsive {
+    @apply max-w-sm sm:max-w-md lg:max-w-lg;
+  }
+
+  /* Responsive loading spinner */
+  .spinner-responsive {
+    @apply w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8;
+  }
+
+  /* Responsive icons */
+  .icon-responsive-sm {
+    @apply w-4 h-4 sm:w-5 sm:h-5;
+  }
+
+  .icon-responsive-base {
+    @apply w-5 h-5 sm:w-6 sm:h-6;
+  }
+
+  .icon-responsive-lg {
+    @apply w-6 h-6 sm:w-8 sm:h-8;
+  }
+
+  /* Responsive gradients */
+  .gradient-responsive {
+    @apply bg-gradient-to-br from-blue-600 to-purple-600 sm:from-blue-500 sm:to-purple-500;
+  }
+
+  /* Responsive shadows */
+  .shadow-responsive {
+    @apply shadow-sm sm:shadow-md lg:shadow-lg;
+  }
+
+  /* Responsive borders */
+  .border-responsive {
+    @apply border sm:border-2;
+  }
+
+  /* Responsive rounded corners */
+  .rounded-responsive {
+    @apply rounded-md sm:rounded-lg lg:rounded-xl;
+  }
+
+  /* Responsive animations */
+  .animate-responsive {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  /* Responsive hover effects */
+  .hover-responsive {
+    @apply hover:scale-105 hover:shadow-lg transition-all duration-200;
+  }
+
+  /* Responsive focus states */
+  .focus-responsive {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  /* Responsive active states */
+  .active-responsive {
+    @apply active:scale-95 transition-transform duration-100;
+  }
+
+  /* Responsive disabled states */
+  .disabled-responsive {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  /* Responsive loading states */
+  .loading-responsive {
+    @apply animate-pulse bg-muted;
+  }
+
+  /* Responsive error states */
+  .error-responsive {
+    @apply border-destructive text-destructive bg-destructive/10;
+  }
+
+  /* Responsive success states */
+  .success-responsive {
+    @apply border-green-500 text-green-600 bg-green-50;
+  }
+
+  /* Responsive warning states */
+  .warning-responsive {
+    @apply border-yellow-500 text-yellow-600 bg-yellow-50;
+  }
+
+  /* Responsive info states */
+  .info-responsive {
+    @apply border-blue-500 text-blue-600 bg-blue-50;
+  }
+
+  /* Responsive dark mode support */
+  .dark .dark-responsive {
+    @apply bg-background text-foreground;
+  }
+
+  /* Responsive print styles */
+  @media print {
+    .print-responsive {
+      @apply bg-white text-black;
+    }
+  }
+
+  /* Responsive high contrast mode */
+  @media (prefers-contrast: high) {
+    .contrast-responsive {
+      @apply border-2 border-foreground;
+    }
+  }
+
+  /* Responsive reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .motion-responsive {
+      @apply transition-none;
+    }
+  }
+
+  /* Responsive landscape orientation */
+  @media (orientation: landscape) and (max-height: 500px) {
+    .landscape-responsive {
+      @apply h-auto min-h-screen;
+    }
+  }
+
+  /* Responsive portrait orientation */
+  @media (orientation: portrait) and (max-width: 500px) {
+    .portrait-responsive {
+      @apply w-full max-w-full;
+    }
+  }
+}
+
+/* Custom responsive breakpoints */
+@layer utilities {
+  /* Extra small devices (phones, 320px and up) */
+  .xs\:container {
+    max-width: 320px;
+  }
+
+  /* Small devices (landscape phones, 576px and up) */
+  .sm\:container {
+    max-width: 576px;
+  }
+
+  /* Medium devices (tablets, 768px and up) */
+  .md\:container {
+    max-width: 768px;
+  }
+
+  /* Large devices (desktops, 992px and up) */
+  .lg\:container {
+    max-width: 992px;
+  }
+
+  /* Extra large devices (large desktops, 1200px and up) */
+  .xl\:container {
+    max-width: 1200px;
+  }
+
+  /* 2XL devices (larger desktops, 1400px and up) */
+  .2xl\:container {
+    max-width: 1400px;
+  }
+}
